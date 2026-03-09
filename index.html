@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday | Celeberate Your Special Day</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description"
+        content="A premium birthday celebration website with elegant designs and interactive elements.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@500;800&family=Dancing+Script:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <canvas id="star-canvas"></canvas>
+
+
+        <div class="hero-content">
+            <h2 class="happy-text">HAPPY</h2>
+            <h1 class="birthday-text" data-text="BIRTHDAY">BIRTHDAY</h1>
+            <h1 class="bruh-text" data-text="Bruh">Bruh</h1>
+            <p class="description">
+                Today is all about celebrating you, your journey and your dreams.
+            </p>
+            <a href="#letter" class="cta-btn">READ MY LETTER</a>
+        </div>
+
+        <div class="decorative-stars">
+            <!-- These will be styled in CSS to mimic the image -->
+            <div class="star-shape s1"></div>
+            <div class="star-shape s2"></div>
+            <div class="star-shape s3"></div>
+            <div class="star-shape s4"></div>
+            <div class="star-shape s5"></div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Birthday Letter Section -->
+        <section class="letter-section" id="letter">
+            <div class="letter-wrapper envelope-container">
+                <!-- Envelope bottom -->
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <span class="env-seal">💌</span>
+                        <button id="open-envelope-btn" class="open-btn">Open Letter</button>
+                    </div>
+                </div>
+
+                <!-- Letter sliding out -->
+                <div class="letter-paper">
+                    <button id="close-letter-btn" class="close-letter-btn" title="Close Letter">&times;</button>
+                    <div class="letter-inner">
+                        <p class="letter-date">March 12, 2026</p>
+                        <h3 class="letter-greeting">Happy Birthday, bruh! 🎉🎂</h3>
+
+                        <p class="letter-para" data-delay="0">
+                            On this special day, I just want to remind you how amazing you are and how much positivity
+                            you bring to the people around you.
+                            You are someone who always works hard, stays strong during tough times, and never stops
+                            believing in a better future.
+                        </p>
+
+                        <p class="letter-para" data-delay="400">
+                            I truly hope this year brings you closer to all the goals and dreams you have been chasing.
+                            May every step you take lead you toward success, happiness, and the life you have always
+                            imagined for yourself.
+                            Never stop dreaming big and keep moving forward with confidence.
+                        </p>
+
+                        <p class="letter-para highlight" data-delay="800">
+                            I'm really grateful to have a friend like you, and I'm excited to see all the wonderful
+                            things you will accomplish in the future.
+                            May your life be filled with happiness, good health, success, and endless opportunities.
+                        </p>
+
+                        <p class="letter-closing" data-delay="1200">
+                            Once again, happy birthday! May this year be the beginning of many great achievements and
+                            beautiful moments in your life. 🎊✨
+                        </p>
+
+                        <p class="letter-signature" data-delay="1600">By Akshaya</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cake Section -->
+        <section class="cake-section" id="celebrate">
+            <h2 class="section-title">MAKE A WISH, BRUH 🎂</h2>
+            <div class="cake-container reveal">
+                <div class="cake-scene">
+                    <div class="candles-row">
+                        <div class="candle c1">
+                            <div class="flame"></div>
+                        </div>
+                        <div class="candle c2">
+                            <div class="flame"></div>
+                        </div>
+                        <div class="candle c3">
+                            <div class="flame"></div>
+                        </div>
+                        <div class="candle c4">
+                            <div class="flame"></div>
+                        </div>
+                        <div class="candle c5">
+                            <div class="flame"></div>
+                        </div>
+                    </div>
+                    <div class="cake">
+                        <div class="cake-layer top-layer">
+                            <div class="frosting-drips top-drips">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <div class="layer-dots"><span>★</span><span>♥</span><span>★</span></div>
+                        </div>
+                        <div class="cake-layer mid-layer">
+                            <div class="frosting-drips mid-drips">
+                                <span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <div class="layer-text">Happy Birthday</div>
+                        </div>
+                        <div class="cake-layer bot-layer">
+                            <div class="layer-dots">
+                                <span>♦</span><span>★</span><span>♥</span><span>★</span><span>♦</span>
+                            </div>
+                        </div>
+                        <div class="cake-plate"></div>
+                    </div>
+                </div>
+                <p class="cake-subtitle">Make a wish — you've earned it. ✨</p>
+                <button id="blow-btn" class="cta-btn">BLOW CANDLES 💨</button>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
