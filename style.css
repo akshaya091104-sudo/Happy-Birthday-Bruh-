@@ -999,13 +999,28 @@ main {
     }
 
     .letter-paper {
-        padding: 2.5rem 1.5rem;
-        left: 2%;
-        width: 96%;
+        padding: 1.5rem 1.2rem;
+        left: 5%;
+        width: 90%;
+        max-height: 380px; /* Reduced height on mobile */
+        overflow-y: auto; /* Allow scrolling within the letter */
+        scrollbar-width: thin;
+        scrollbar-color: var(--accent-gold) transparent;
+    }
+
+    /* Custom scrollbar for webkit */
+    .letter-paper::-webkit-scrollbar {
+        width: 4px;
+    }
+    .letter-paper::-webkit-scrollbar-thumb {
+        background: var(--accent-gold);
+        border-radius: 10px;
     }
 
     .mobile-close-btn {
         display: block; /* Show on mobile */
+        margin-top: 1.5rem;
+        padding: 10px;
     }
 
     .envelope-container.is-open .letter-paper {
@@ -1069,6 +1084,10 @@ main {
     
     .envelope-container.is-open .letter-paper {
         transform: translateY(-200px) scale(0.9);
+    }
+
+    .letter-paper {
+        max-height: 300px; /* Even shorter for small phones */
     }
     
     .cake-container {
