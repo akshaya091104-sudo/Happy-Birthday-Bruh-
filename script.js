@@ -201,7 +201,20 @@ function createConfetti() {
         }, i * 10);
     }
 }
-// Birthday Letter Button Logic
+// Smooth scroll to letter section
+const ctaBtn = document.querySelector('.cta-btn');
+if (ctaBtn) {
+    ctaBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const letterSection = document.getElementById('letter');
+        if (letterSection) {
+            letterSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+}
 const openEnvelopeBtn = document.getElementById('open-envelope-btn');
 const closeLetterBtn = document.getElementById('close-letter-btn');
 const closeLetterMobileBtn = document.getElementById('close-letter-mobile-btn');
@@ -221,16 +234,22 @@ if (openEnvelopeBtn && envelopeContainer) {
         // Open envelope and start paper sliding up
         envelopeContainer.classList.add('is-open');
 
-        // Smooth scroll to the letter after it starts sliding up
+        // Smooth scroll to the first line of the letter after it slides up
         setTimeout(() => {
+            const letterGreeting = envelopeContainer.querySelector('.letter-greeting');
             const letterPaper = envelopeContainer.querySelector('.letter-paper');
+            
             if (letterPaper) {
-                letterPaper.scrollIntoView({ 
+                letterPaper.scrollTop = 0; // Reset internal scroll to top
+            }
+            
+            if (letterGreeting) {
+                letterGreeting.scrollIntoView({ 
                     behavior: 'smooth', 
-                    block: 'center' 
+                    block: 'center' // Centering the first line for the best view
                 });
             }
-        }, 500); // Wait for flap animation to start before scrolling
+        }, 800); // Wait slightly longer for the slide-up to be more complete
 
         // Wait for sliding animation to mostly finish before starting text reveal
         setTimeout(() => {
