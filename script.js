@@ -221,6 +221,17 @@ if (openEnvelopeBtn && envelopeContainer) {
         // Open envelope and start paper sliding up
         envelopeContainer.classList.add('is-open');
 
+        // Smooth scroll to the letter after it starts sliding up
+        setTimeout(() => {
+            const letterPaper = envelopeContainer.querySelector('.letter-paper');
+            if (letterPaper) {
+                letterPaper.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }
+        }, 500); // Wait for flap animation to start before scrolling
+
         // Wait for sliding animation to mostly finish before starting text reveal
         setTimeout(() => {
             const letterElements = envelopeContainer.querySelectorAll('.letter-para, .letter-closing, .letter-signature, .mobile-close-btn');
@@ -230,7 +241,7 @@ if (openEnvelopeBtn && envelopeContainer) {
                     el.classList.add('letter-reveal');
                 }, delay);
             });
-        }, 1000); // 1 second delay matches the CSS transform timing roughly
+        }, 1000); 
     });
 }
 
