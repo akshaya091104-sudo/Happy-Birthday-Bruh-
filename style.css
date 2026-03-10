@@ -695,6 +695,32 @@ main {
     transform: translateY(10px);
 }
 
+.mobile-close-btn {
+    display: none; /* Hidden by default on desktop */
+    width: 100%;
+    margin-top: 2rem;
+    padding: 12px;
+    background: #e8635a;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: var(--nav-font);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.mobile-close-btn:hover {
+    background: #d64541;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(232, 99, 90, 0.3);
+}
+
 /* Typewriter Fade-in Animation Classes */
 .letter-reveal {
     animation: fadeTextIn 0.8s ease forwards;
@@ -978,6 +1004,10 @@ main {
         width: 96%;
     }
 
+    .mobile-close-btn {
+        display: block; /* Show on mobile */
+    }
+
     .envelope-container.is-open .letter-paper {
         transform: translateY(-240px) scale(0.95);
     }
@@ -1020,6 +1050,15 @@ main {
 }
 
 @media (max-width: 480px) {
+    .logo-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .navbar {
+        padding: 1.5rem 5%;
+    }
+
     .birthday-text {
         font-size: 2.8rem;
     }
