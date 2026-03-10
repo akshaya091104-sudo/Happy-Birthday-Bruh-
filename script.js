@@ -204,7 +204,17 @@ function createConfetti() {
 // Birthday Letter Button Logic
 const openEnvelopeBtn = document.getElementById('open-envelope-btn');
 const closeLetterBtn = document.getElementById('close-letter-btn');
+const closeLetterMobileBtn = document.getElementById('close-letter-mobile-btn');
 const envelopeContainer = document.querySelector('.envelope-container');
+
+const closeLetter = () => {
+    // Close envelope
+    envelopeContainer.classList.remove('is-open');
+    
+    // Remove typing animation classes instantly so it resets for next time
+    const letterElements = envelopeContainer.querySelectorAll('.letter-para, .letter-closing, .letter-signature, .mobile-close-btn');
+    letterElements.forEach(el => el.classList.remove('letter-reveal'));
+};
 
 if (openEnvelopeBtn && envelopeContainer) {
     openEnvelopeBtn.addEventListener('click', () => {
@@ -213,7 +223,7 @@ if (openEnvelopeBtn && envelopeContainer) {
 
         // Wait for sliding animation to mostly finish before starting text reveal
         setTimeout(() => {
-            const letterElements = envelopeContainer.querySelectorAll('.letter-para, .letter-closing, .letter-signature');
+            const letterElements = envelopeContainer.querySelectorAll('.letter-para, .letter-closing, .letter-signature, .mobile-close-btn');
             letterElements.forEach(el => {
                 const delay = el.getAttribute('data-delay') || 0;
                 setTimeout(() => {
@@ -225,12 +235,9 @@ if (openEnvelopeBtn && envelopeContainer) {
 }
 
 if (closeLetterBtn && envelopeContainer) {
-    closeLetterBtn.addEventListener('click', () => {
-        // Close envelope
-        envelopeContainer.classList.remove('is-open');
-        
-        // Remove typing animation classes instantly so it resets for next time
-        const letterElements = envelopeContainer.querySelectorAll('.letter-para, .letter-closing, .letter-signature');
-        letterElements.forEach(el => el.classList.remove('letter-reveal'));
-    });
+    closeLetterBtn.addEventListener('click', closeLetter);
+}
+
+if (closeLetterMobileBtn && envelopeContainer) {
+    closeLetterMobileBtn.addEventListener('click', closeLetter);
 }
