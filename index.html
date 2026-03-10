@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday | Celeberate Your Special Day</title>
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preload" as="image" href="logo.png" fetchpriority="high">
     <meta name="description"
         content="A premium birthday celebration website with elegant designs and interactive elements.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +22,7 @@
     <header class="hero">
         <nav class="navbar">
             <div class="logo">
-                <img src="logo.png" alt="Logo" class="logo-img">
+                <img src="logo.png" alt="Logo" class="logo-img loaded" fetchpriority="high" decoding="async">
             </div>
         </nav>
         <canvas id="star-canvas"></canvas>
@@ -68,14 +69,16 @@
                         <h3 class="letter-greeting">Happy Birthday, bruh! 🎉🎂</h3>
 
                         <p class="letter-para" data-delay="0">
-                            On this special day, I just want to remind you how amazing you are and how much positivity
+                            On this special day, I just want to remind you how amazing you are and how much
+                            positivity
                             you bring to the people around you.
                             You are someone who always works hard, stays strong during tough times, and never stops
                             believing in a better future.
                         </p>
 
                         <p class="letter-para" data-delay="400">
-                            I truly hope this year brings you closer to all the goals and dreams you have been chasing.
+                            I truly hope this year brings you closer to all the goals and dreams you have been
+                            chasing.
                             May every step you take lead you toward success, happiness, and the life you have always
                             imagined for yourself.
                             Never stop dreaming big and keep moving forward with confidence.
@@ -88,7 +91,8 @@
                         </p>
 
                         <p class="letter-closing" data-delay="1200">
-                            Once again, happy birthday! May this year be the beginning of many great achievements and
+                            Once again, happy birthday! May this year be the beginning of many great achievements
+                            and
                             beautiful moments in your life. 🎊✨
                         </p>
 
