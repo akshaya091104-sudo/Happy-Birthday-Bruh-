@@ -81,7 +81,12 @@ body {
     object-fit: cover;
     border: 2px solid var(--accent-gold);
     box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.8s ease;
+    opacity: 0; /* Hidden initially to avoid partial load scan-lines */
+}
+
+.logo-img.loaded {
+    opacity: 1; /* Fade-in once fully loaded */
 }
 
 .logo:hover .logo-img {
